@@ -1860,3 +1860,700 @@ a {
 .reservation-footer span:first-child {
   color: #343531;
 }
+
+
+/* =========================================
+   MIDORI — MOBILE & TABLET
+   Desktop styles remain unchanged
+========================================= */
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  /* HEADER ON ALL PAGES */
+
+  .header,
+  .reservation-page .header,
+  .home-page .header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 12px;
+    row-gap: 8px;
+    height: auto;
+    min-height: 106px;
+    padding: 12px 0;
+  }
+
+  .home-page .header {
+    padding: 12px 24px;
+  }
+
+  .logo,
+  .reservation-page .logo {
+    grid-row: 1;
+    grid-column: 1;
+    white-space: nowrap;
+  }
+
+  .navigation,
+  .reservation-page .navigation,
+  .home-page .navigation {
+    position: static;
+    left: auto;
+    transform: none;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .navigation a,
+  .reservation-page .navigation a,
+  .home-page .navigation a {
+    font-size: 13px;
+    white-space: nowrap;
+    padding: 6px 0;
+  }
+
+  .reserve-button,
+  .reservation-page .reserve-button,
+  .home-page .reserve-button {
+    grid-row: 1;
+    grid-column: 2;
+    justify-self: end;
+    width: auto;
+    min-width: 0;
+    max-width: 60vw;
+    min-height: 42px;
+    height: auto;
+    padding: 8px 14px;
+    gap: 10px;
+    font-size: 10px;
+    line-height: 1.2;
+  }
+
+  /* PAGE SPACING */
+
+  .visit-page,
+  .story-page,
+  .menu-page,
+  .product-page,
+  .reservation-page {
+    padding: 18px 24px;
+  }
+
+  /* VISIT */
+
+  .locations {
+    gap: 28px 18px;
+    padding-top: 34px;
+  }
+
+  /* STORY */
+
+  .story-main {
+    padding: 42px 0 0;
+  }
+
+  .story-section,
+  .story-presence {
+    gap: 24px;
+  }
+
+  .story-founders {
+    padding-left: 0;
+  }
+
+  .story-founders-images,
+  .story-gallery {
+    gap: 14px;
+  }
+
+  /* MENU */
+
+  .menu-main {
+    padding-top: 40px;
+  }
+
+  .menu-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+    gap: 32px 18px;
+  }
+
+  /* PRODUCT */
+
+  .product-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .product-main {
+    padding-top: 26px;
+  }
+
+  /* RESERVATION */
+
+  .reservation-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .reservation-main {
+    padding-top: 34px;
+  }
+}
+
+
+/* =========================================
+   MOBILE — 650px AND BELOW
+========================================= */
+
+@media (max-width: 650px) {
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* COMMON PAGE SPACING */
+
+  .visit-page,
+  .story-page,
+  .menu-page,
+  .product-page,
+  .reservation-page {
+    padding: 14px 18px;
+  }
+
+  /* MOBILE HEADER */
+
+  .header,
+  .reservation-page .header,
+  .home-page .header {
+    min-height: 96px;
+    padding: 10px 0;
+    column-gap: 8px;
+    row-gap: 7px;
+  }
+
+  .home-page .header {
+    padding: 10px 18px;
+  }
+
+  .logo,
+  .reservation-page .logo {
+    font-size: 14px;
+    letter-spacing: 3px;
+  }
+
+  .navigation,
+  .reservation-page .navigation,
+  .home-page .navigation {
+    gap: 8px;
+  }
+
+  .navigation a,
+  .reservation-page .navigation a,
+  .home-page .navigation a {
+    font-size: 12px;
+  }
+
+  .reserve-button,
+  .reservation-page .reserve-button,
+  .home-page .reserve-button {
+    min-height: 40px;
+    padding: 6px 10px;
+    gap: 8px;
+    font-size: 10px;
+    max-width: 60vw;
+  }
+
+  .reserve-button span {
+    font-size: 17px;
+  }
+
+  /* ==========================
+     3D MATCHA INTRO
+  ========================== */
+
+  .home-page .matcha-journey {
+    height: 220svh;
+  }
+
+  .home-page .matcha-journey__sticky {
+    height: 100svh;
+  }
+
+  .home-page .matcha-green {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .home-page .matcha-3d__fallback {
+    width: min(68vw, 340px);
+    max-height: 48svh;
+  }
+
+  .home-page .scroll-cue {
+    bottom: max(
+      16px,
+      env(safe-area-inset-bottom)
+    );
+
+    font-size: 10px;
+    letter-spacing: 1.7px;
+  }
+
+  /* ==========================
+     GREEN HOMEPAGE
+  ========================== */
+
+  .home-page .hero {
+    flex: 1 0 auto;
+    width: 100%;
+    min-height: calc(100svh - 96px);
+    align-items: center;
+    justify-content: flex-start;
+    padding: 22px 22px 34px;
+  }
+
+  .home-page .hero-content {
+    max-width: 100%;
+  }
+
+  .home-page .hero-content h1 {
+    font-size: clamp(38px, 10vw, 54px);
+    line-height: 1.04;
+    letter-spacing: -1.8px;
+  }
+
+  .home-page .description {
+    margin-top: 18px;
+    max-width: 330px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .home-page .hero-buttons {
+    margin-top: 22px;
+    gap: 10px;
+  }
+
+  .home-page .btn {
+    min-height: 46px;
+    padding: 0 16px;
+    font-size: 12px;
+  }
+
+  .home-page .btn-dark {
+    gap: 14px;
+  }
+
+  .home-page .btn-dark span {
+    font-size: 20px;
+  }
+
+  .home-page .btn-light {
+    min-width: 110px;
+  }
+
+  .home-page .hero-symbol {
+    top: auto;
+    bottom: -20px;
+    right: -12px;
+    transform: none;
+    font-size: min(57vw, 200px);
+    opacity: 0.45;
+  }
+
+  /* ==========================
+     VISIT US
+  ========================== */
+
+  .locations {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 32px;
+    padding: 26px 0 35px;
+  }
+
+  .location-image {
+    aspect-ratio: 1.45 / 1;
+  }
+
+  .location-info {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .location-details h2 {
+    font-size: 20px;
+  }
+
+  .location-details p {
+    font-size: 12px;
+  }
+
+  .directions-link {
+    padding: 4px 0;
+  }
+
+  /* ==========================
+     OUR STORY
+  ========================== */
+
+  .story-main {
+    padding: 30px 0 0;
+  }
+
+  .story-section,
+  .story-presence {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .story-intro {
+    margin-bottom: 55px;
+  }
+
+  .story-intro .story-text {
+    padding-top: 0;
+  }
+
+  .story-text h1,
+  .story-text h2,
+  .story-presence h2 {
+    font-size: clamp(30px, 8vw, 42px);
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+
+  .story-text p,
+  .story-presence p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .story-intro-image {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .story-founders {
+    margin-bottom: 42px;
+  }
+
+  .story-founders-images {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+    height: auto;
+    gap: 10px;
+  }
+
+  .story-founders-images img {
+    aspect-ratio: 3 / 4;
+    height: auto;
+  }
+
+  .story-presence {
+    padding: 32px 0;
+  }
+
+  .story-gallery {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding-bottom: 35px;
+  }
+
+  .story-gallery > div {
+    height: 165px;
+  }
+
+  .story-gallery > div:first-child {
+    grid-column: 1 / -1;
+    height: 250px;
+  }
+
+  /* ==========================
+     MENU
+  ========================== */
+
+  .menu-main {
+    padding-top: 28px;
+  }
+
+  .menu-title {
+    font-size: 54px;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+  }
+
+  .menu-categories {
+    flex-wrap: nowrap;
+    gap: 22px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .category-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 13px;
+  }
+
+  .menu-filter-row {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 18px 0 23px;
+  }
+
+  .lactose-filters {
+    gap: 6px;
+  }
+
+  .lactose-btn {
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  .menu-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .drink-image {
+    aspect-ratio: 1.35 / 1;
+  }
+
+  .drink-info h2 {
+    font-size: 21px;
+  }
+
+  .drink-info p {
+    font-size: 13px;
+  }
+
+  .menu-note {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 35px 0 30px;
+  }
+
+  .menu-cta {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 26px 20px;
+    gap: 20px;
+  }
+
+  .menu-cta-button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* ==========================
+     PRODUCT DETAIL
+  ========================== */
+
+  .product-main {
+    padding-top: 22px;
+  }
+
+  .product-back {
+    margin-bottom: 20px;
+  }
+
+  .product-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .product-main-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .product-thumbnails {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .product-thumbnail {
+    aspect-ratio: 4 / 3;
+  }
+
+  .product-details h1 {
+    font-size: clamp(38px, 10vw, 54px);
+  }
+
+  .product-description {
+    font-size: 14px;
+  }
+
+  .ingredient-row {
+    grid-template-columns:
+      minmax(0, 0.9fr)
+      minmax(0, 1.1fr);
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  .product-note {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .product-map {
+    height: 210px;
+  }
+
+  .product-map-link {
+    padding: 12px;
+    align-items: flex-end;
+  }
+
+  .product-map-button {
+    min-width: 0;
+    height: 48px;
+    padding: 0 14px;
+  }
+
+  /* ==========================
+     RESERVATION
+  ========================== */
+
+  .reservation-main {
+    padding: 30px 0 40px;
+  }
+
+  .reservation-intro {
+    margin-bottom: 28px;
+  }
+
+  .reservation-intro h1 {
+    font-size: 42px;
+    letter-spacing: -1.5px;
+  }
+
+  .reservation-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .reservation-form-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .reservation-form-heading span {
+    text-align: left;
+  }
+
+  .reservation-fields,
+  .reservation-fields.location-fields {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .reservation-field input,
+  .reservation-field select,
+  .reservation-field textarea {
+    font-size: 16px;
+  }
+
+  .reservation-submit {
+    width: 100%;
+  }
+
+  .reservation-contact {
+    padding: 22px 18px;
+  }
+
+  .reservation-location-details {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* ==========================
+     FOOTERS
+  ========================== */
+
+  .visit-footer,
+  .story-footer,
+  .menu-footer,
+  .product-footer,
+  .reservation-footer {
+    flex-wrap: wrap;
+    padding: 14px 0;
+    gap: 8px 16px;
+  }
+}
+
+
+/* EXTRA SMALL PHONES */
+
+@media (max-width: 375px),
+       (max-width: 650px) and (max-height: 650px) {
+
+  .home-page .hero {
+    padding: 15px 18px 24px;
+  }
+
+  .home-page .hero-content h1 {
+    font-size: clamp(34px, 10vw, 40px);
+  }
+
+  .home-page .description {
+    font-size: 12px;
+    margin-top: 12px;
+  }
+
+  .home-page .hero-buttons {
+    margin-top: 16px;
+  }
+
+  .home-page .btn {
+    min-height: 42px;
+    padding: 0 11px;
+  }
+
+  .home-page .header {
+    padding: 8px 14px;
+  }
+
+  .logo,
+  .reservation-page .logo {
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .navigation a,
+  .reservation-page .navigation a,
+  .home-page .navigation a {
+    font-size: 11px;
+  }
+
+  .reserve-button,
+  .reservation-page .reserve-button,
+  .home-page .reserve-button {
+    font-size: 9px;
+    padding: 6px 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue__arrow {
+    animation: none;
+  }
+}
+
