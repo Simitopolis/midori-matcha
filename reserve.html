@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Reserve a Table — MIDORI</title>
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="reservation-page">
+
+    <!-- HEADER -->
+    <header class="header">
+
+      <!-- LOGO LEFT -->
+      <a href="./index.html" class="logo">
+        MIDORI<sup>®</sup>
+      </a>
+
+      <!-- NAVIGATION CENTER -->
+      <nav class="navigation" aria-label="Main navigation">
+        <a href="./menu.html">Menu</a>
+        <a href="./story.html">Our story</a>
+        <a href="./visit.html">Visit Us</a>
+      </nav>
+
+      <!-- BUTTON RIGHT -->
+      <a href="./visit.html" class="reserve-button">
+        Find your nearest café
+        <span>→</span>
+      </a>
+
+    </header>
+
+    <!-- MAIN -->
+    <main class="reservation-main">
+
+      <!-- PAGE HEADING -->
+      <section class="reservation-intro">
+        <h1>Reserve a table.</h1>
+
+        <p>
+          A little time for matcha. Call your café directly,
+          or send us a reservation request below.
+        </p>
+      </section>
+
+      <!-- TWO COLUMN LAYOUT -->
+      <div class="reservation-layout">
+
+        <!-- LEFT: RESERVATION FORM -->
+        <section class="reservation-form-section">
+
+          <div class="reservation-form-heading">
+            <h2>Send a request</h2>
+
+            <span>
+              All fields required unless marked optional
+            </span>
+          </div>
+
+          <form class="reservation-form" id="reservation-form">
+
+            <!-- LOCATION AND GUESTS -->
+            <div class="reservation-fields location-fields">
+
+              <div class="reservation-field">
+                <label for="cafe">Café</label>
+
+                <select id="cafe" name="cafe" required>
+                  <option value="" disabled selected>
+                    Choose a location
+                  </option>
+
+                  <option value="Greenpoint">
+                    Greenpoint — Brooklyn
+                  </option>
+
+                  <option value="Silver Lake">
+                    Silver Lake — Los Angeles
+                  </option>
+
+                  <option value="Inner Richmond">
+                    Inner Richmond — San Francisco
+                  </option>
+
+                  <option value="Eastside">
+                    Eastside — Portland
+                  </option>
+                </select>
+              </div>
+
+              <div class="reservation-field">
+                <label for="guests">Guests</label>
+
+                <select id="guests" name="guests" required>
+                  <option value="" disabled selected>
+                    Select guests
+                  </option>
+
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests</option>
+                  <option value="6">6 guests</option>
+                  <option value="7">7 guests</option>
+                  <option value="8">8 guests</option>
+                </select>
+              </div>
+
+            </div>
+
+            <!-- DATE AND TIME -->
+            <div class="reservation-fields">
+
+              <div class="reservation-field">
+                <label for="date">Preferred date</label>
+
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  required
+                />
+              </div>
+
+              <div class="reservation-field">
+                <label for="time">Preferred time</label>
+
+                <select id="time" name="time" required>
+                  <option value="" disabled selected>
+                    Select a time
+                  </option>
+
+                  <option value="09:00">9:00 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="13:00">1:00 PM</option>
+                  <option value="14:00">2:00 PM</option>
+                  <option value="15:00">3:00 PM</option>
+                  <option value="16:00">4:00 PM</option>
+                  <option value="17:00">5:00 PM</option>
+                  <option value="18:00">6:00 PM</option>
+                  <option value="19:00">7:00 PM</option>
+                </select>
+              </div>
+
+            </div>
+
+            <!-- DIVIDER -->
+            <div class="reservation-divider"></div>
+
+            <!-- NAME AND EMAIL -->
+            <div class="reservation-fields">
+
+              <div class="reservation-field">
+                <label for="customer-name">
+                  Your name
+                </label>
+
+                <input
+                  type="text"
+                  id="customer-name"
+                  name="customer-name"
+                  placeholder="Full name"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+
+              <div class="reservation-field">
+                <label for="email">
+                  Email address
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+            </div>
+
+            <!-- PHONE -->
+            <div class="reservation-field">
+              <label for="phone">
+                Phone number (optional)
+              </label>
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Include country code"
+                autocomplete="tel"
+              />
+            </div>
+
+            <!-- SPECIAL REQUESTS -->
+            <div class="reservation-field">
+              <label for="requests">
+                Special requests (optional)
+              </label>
+
+              <textarea
+                id="requests"
+                name="requests"
+                rows="3"
+                placeholder="Accessibility needs, seating preferences or anything else to share."
+              ></textarea>
+            </div>
+
+            <!-- SUBMIT -->
+            <button
+              type="submit"
+              class="reservation-submit"
+            >
+              Send reservation request
+              <span>→</span>
+            </button>
+
+            <!-- DEMO FEEDBACK -->
+            <p
+              class="reservation-feedback"
+              id="reservation-feedback"
+              role="status"
+              aria-live="polite"
+              hidden
+            ></p>
+
+            <p class="reservation-disclaimer">
+              This is a request, not a confirmed booking.
+              Our team will contact you by email or phone
+              to confirm your reservation.
+            </p>
+
+          </form>
+
+        </section>
+
+        <!-- RIGHT: CONTACTS -->
+        <aside class="reservation-contact">
+
+          <h2>Prefer to call?</h2>
+
+          <p class="reservation-contact-intro">
+            Speak with your chosen café about a table.
+          </p>
+
+          <!-- GREENPOINT -->
+          <div class="reservation-location">
+            <h3>Greenpoint</h3>
+
+            <div class="reservation-location-details">
+              <p>
+                128 Willowmere Lane<br />
+                Brooklyn, NY 11222
+              </p>
+
+              <span>+1 (718) 555-0101</span>
+            </div>
+          </div>
+
+          <!-- SILVER LAKE -->
+          <div class="reservation-location">
+            <h3>Silver Lake</h3>
+
+            <div class="reservation-location-details">
+              <p>
+                2468 Mossvale Avenue<br />
+                Los Angeles, CA 90026
+              </p>
+
+              <span>+1 (323) 555-0102</span>
+            </div>
+          </div>
+
+          <!-- INNER RICHMOND -->
+          <div class="reservation-location">
+            <h3>Inner Richmond</h3>
+
+            <div class="reservation-location-details">
+              <p>
+                731 Fernlight Street<br />
+                San Francisco, CA 94118
+              </p>
+
+              <span>+1 (415) 555-0103</span>
+            </div>
+          </div>
+
+          <!-- EASTSIDE -->
+          <div class="reservation-location">
+            <h3>Eastside</h3>
+
+            <div class="reservation-location-details">
+              <p>
+                1846 SE Alderbrook Way<br />
+                Portland, OR 97214
+              </p>
+
+              <span>+1 (512) 555-0104</span>
+            </div>
+          </div>
+
+          <p class="reservation-contact-note">
+            Concept project — all addresses and phone
+            numbers shown are fictional, not real café
+            contacts.
+          </p>
+
+        </aside>
+
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="reservation-footer">
+      <span>MIDORI / MATCHA & MORE</span>
+      <span>© 2026 MIDORI</span>
+      <span>Made into a moment.</span>
+    </footer>
+
+  </div>
+
+  <!-- DEMO FORM BEHAVIOR -->
+  <script>
+    const form = document.getElementById("reservation-form");
+    const feedback = document.getElementById("reservation-feedback");
+    const dateInput = document.getElementById("date");
+
+    // Do not allow past dates
+    const now = new Date();
+
+    const localDate = [
+      now.getFullYear(),
+      String(now.getMonth() + 1).padStart(2, "0"),
+      String(now.getDate()).padStart(2, "0")
+    ].join("-");
+
+    dateInput.min = localDate;
+
+    // Demo: validate the form without sending data
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      feedback.hidden = false;
+      feedback.textContent =
+        "Demo mode: your form is valid, but no reservation request was sent. This website is a concept project.";
+    });
+  </script>
+
+</body>
+</html>

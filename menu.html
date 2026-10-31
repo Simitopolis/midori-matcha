@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Menu — MIDORI</title>
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="menu-page">
+
+    <!-- HEADER -->
+    <header class="header">
+      <a href="./index.html" class="logo">
+        MIDORI<sup>®</sup>
+      </a>
+
+      <nav class="navigation" aria-label="Main navigation">
+        <a href="./menu.html" class="active" aria-current="page">
+          Menu
+        </a>
+
+        <a href="./story.html">
+          Our story
+        </a>
+
+        <a href="./visit.html">
+          Visit Us
+        </a>
+      </nav>
+
+      <a href="./visit.html" class="reserve-button">
+        Find your nearest café
+        <span>→</span>
+      </a>
+    </header>
+
+    <main class="menu-main">
+
+      <!-- PAGE TITLE -->
+      <h1 class="menu-title">menu.</h1>
+
+      <!-- CATEGORY FILTERS -->
+      <div class="menu-categories" aria-label="Drink categories">
+
+        <button
+          type="button"
+          class="category-btn active"
+          data-category="all"
+          aria-pressed="true"
+        >
+          All drinks <span>06</span>
+        </button>
+
+        <button
+          type="button"
+          class="category-btn"
+          data-category="matcha"
+          aria-pressed="false"
+        >
+          Matcha <span>05</span>
+        </button>
+
+        <button
+          type="button"
+          class="category-btn"
+          data-category="hojicha"
+          aria-pressed="false"
+        >
+          Hojicha <span>01</span>
+        </button>
+
+        <button
+          type="button"
+          class="category-btn"
+          data-category="refreshers"
+          aria-pressed="false"
+        >
+          Refreshers <span>00</span>
+        </button>
+      </div>
+
+      <!-- LACTOSE FILTERS -->
+      <div class="menu-filter-row">
+        <span class="filter-label">Lactose</span>
+
+        <div class="lactose-filters">
+          <button
+            type="button"
+            class="lactose-btn active"
+            data-lactose="all"
+            aria-pressed="true"
+          >
+            All
+          </button>
+
+          <button
+            type="button"
+            class="lactose-btn"
+            data-lactose="free"
+            aria-pressed="false"
+          >
+            Lactose-free
+          </button>
+
+          <button
+            type="button"
+            class="lactose-btn"
+            data-lactose="contains"
+            aria-pressed="false"
+          >
+            Contains lactose
+          </button>
+        </div>
+      </div>
+
+      <!-- PRODUCT GRID -->
+      <section class="menu-grid" id="drinks" aria-label="Our drinks">
+
+        <!-- DRINK 1 -->
+        <article
+          class="drink-card"
+          data-category="matcha"
+          data-lactose="contains"
+        >
+          <div class="drink-image">
+            <img
+              src="./pic/m1.png"
+              alt="Iced Matcha Latte"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="drink-info">
+            <span class="drink-category">MATCHA / ICED</span>
+
+            <h2>Iced Matcha Latte</h2>
+
+            <p>
+              Japanese matcha over fresh dairy milk and ice.
+              Smooth, mellow and quietly sweet.
+            </p>
+          </div>
+        </article>
+
+        <!-- DRINK 2 -->
+        <article
+          class="drink-card"
+          data-category="matcha"
+          data-lactose="free"
+        >
+          <a href="./oat-matcha.html" class="drink-image">
+            <img
+              src="./pic/m2.png"
+              alt="Oat Matcha Latte"
+              loading="lazy"
+            />
+          </a>
+
+          <div class="drink-info">
+            <span class="drink-category">MATCHA / ICED</span>
+
+            <h2>Oat Matcha Latte</h2>
+
+            <p>
+              Japanese matcha with silky oat milk.
+              Rounded, earthy notes with a soft oat finish.
+            </p>
+
+            <span class="drink-tag">• Lactose-free</span>
+          </div>
+        </article>
+
+        <!-- DRINK 3 -->
+        <article
+          class="drink-card"
+          data-category="matcha"
+          data-lactose="contains"
+        >
+          <div class="drink-image">
+            <img
+              src="./pic/m3.png"
+              alt="Strawberry Matcha"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="drink-info">
+            <span class="drink-category">MATCHA / ICED</span>
+
+            <h2>Strawberry Matcha</h2>
+
+            <p>
+              Strawberry purée, fresh dairy milk and matcha.
+              A bright, berry-sweet signature.
+            </p>
+          </div>
+        </article>
+
+        <!-- DRINK 4 -->
+        <article
+          class="drink-card"
+          data-category="matcha"
+          data-lactose="free"
+        >
+          <div class="drink-image">
+            <img
+              src="./pic/m4.png"
+              alt="Pure Iced Matcha"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="drink-info">
+            <span class="drink-category">MATCHA / REFRESHER</span>
+
+            <h2>Pure Iced Matcha</h2>
+
+            <p>
+              Just matcha, filtered water and ice.
+              Fresh, grassy and beautifully uncomplicated.
+            </p>
+
+            <span class="drink-tag">• Lactose-free</span>
+          </div>
+        </article>
+
+        <!-- DRINK 5 -->
+        <article
+          class="drink-card"
+          data-category="matcha"
+          data-lactose="free"
+        >
+          <div class="drink-image">
+            <img
+              src="./pic/m5.png"
+              alt="Yuzu Matcha Sparkle"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="drink-info">
+            <span class="drink-category">MATCHA / REFRESHER</span>
+
+            <h2>Yuzu Matcha Sparkle</h2>
+
+            <p>
+              Matcha, yuzu juice and sparkling water.
+              Citrus-led, lightly sweet and uplifting.
+            </p>
+
+            <span class="drink-tag">• Lactose-free</span>
+          </div>
+        </article>
+
+        <!-- DRINK 6 -->
+        <article
+          class="drink-card"
+          data-category="hojicha"
+          data-lactose="free"
+        >
+          <div class="drink-image">
+            <img
+              src="./pic/m6.png"
+              alt="Oat Hojicha Latte"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="drink-info">
+            <span class="drink-category">HOJICHA / ICED</span>
+
+            <h2>Oat Hojicha Latte</h2>
+
+            <p>
+              Roasted Japanese green tea with oat milk.
+              Toasty, nutty and softly caramel-like.
+            </p>
+
+            <span class="drink-tag">• Lactose-free</span>
+          </div>
+        </article>
+
+      </section>
+
+      <p class="menu-empty" id="menu-empty" hidden>
+        No drinks match your filters.
+        Try another selection.
+      </p>
+
+      <!-- ALLERGY NOTE -->
+      <div class="menu-note">
+        <strong>A note</strong>
+
+        <p>
+          Lactose-free does not mean allergen-free.
+          Our drinks are prepared in a shared space;
+          please speak to our team about allergies.
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <section class="menu-cta">
+        <h2>
+          Your next pause is closer<br />
+          than you think.
+        </h2>
+
+        <a href="./visit.html" class="menu-cta-button">
+          Find your nearest café
+          <span>→</span>
+        </a>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="menu-footer">
+      <span>MIDORI / MATCHA & MORE</span>
+      <span>© 2026 MIDORI</span>
+      <span>Made into a moment.</span>
+    </footer>
+  </div>
+
+  <!-- FILTER FUNCTIONALITY -->
+  <script>
+    const categoryButtons =
+      document.querySelectorAll(".category-btn");
+
+    const lactoseButtons =
+      document.querySelectorAll(".lactose-btn");
+
+    const drinkCards =
+      document.querySelectorAll(".drink-card");
+
+    const emptyMessage =
+      document.getElementById("menu-empty");
+
+    let selectedCategory = "all";
+    let selectedLactose = "all";
+
+    function filterDrinks() {
+      let visibleCount = 0;
+
+      drinkCards.forEach((card) => {
+        const matchesCategory =
+          selectedCategory === "all" ||
+          card.dataset.category === selectedCategory;
+
+        const matchesLactose =
+          selectedLactose === "all" ||
+          card.dataset.lactose === selectedLactose;
+
+        const shouldShow =
+          matchesCategory && matchesLactose;
+
+        card.hidden = !shouldShow;
+
+        if (shouldShow) {
+          visibleCount++;
+        }
+      });
+
+      emptyMessage.hidden = visibleCount !== 0;
+    }
+
+    categoryButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        selectedCategory = button.dataset.category;
+
+        categoryButtons.forEach((item) => {
+          const isActive = item === button;
+
+          item.classList.toggle("active", isActive);
+          item.setAttribute("aria-pressed", isActive);
+        });
+
+        filterDrinks();
+      });
+    });
+
+    lactoseButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        selectedLactose = button.dataset.lactose;
+
+        lactoseButtons.forEach((item) => {
+          const isActive = item === button;
+
+          item.classList.toggle("active", isActive);
+          item.setAttribute("aria-pressed", isActive);
+        });
+
+        filterDrinks();
+      });
+    });
+
+    filterDrinks();
+  </script>
+
+</body>
+</html>

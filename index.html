@@ -1,0 +1,123 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIDORI — Matcha</title>
+  <link rel="stylesheet" href="./style.css?v=5" />
+  <noscript>
+    <style>
+      .home-page .matcha-green,
+      .home-page .matcha-green .header,
+      .home-page .matcha-green .hero-content {
+        opacity: 1 !important;
+      }
+      .home-page .matcha-green {
+        pointer-events: auto !important;
+      }
+      .home-page .matcha-journey {
+        height: 100vh !important;
+      }
+      .home-page .matcha-3d,
+      .home-page .scroll-cue {
+        display: none !important;
+      }
+    </style>
+  </noscript>
+</head>
+
+<body>
+  <div class="page home-page" id="home">
+
+    <section class="matcha-journey">
+      <div class="matcha-journey__sticky">
+
+        <!-- 3D MATCHA CUP -->
+        <div
+          class="matcha-3d"
+          id="matcha-3d-canvas"
+          aria-hidden="true"
+        >
+          <img
+            src="./pic/2.png"
+            class="matcha-3d__fallback"
+            alt=""
+          />
+        </div>
+
+        <!-- SCROLL HINT -->
+        <button
+          class="scroll-cue"
+          type="button"
+          aria-label="Scroll down to enter MIDORI"
+        >
+          <span>SCROLL TO ENTER</span>
+          <span class="scroll-cue__arrow">↓</span>
+        </button>
+
+        <!-- GREEN HOMEPAGE -->
+        <div class="matcha-green" id="main-menu">
+
+          <header class="header">
+            <a href="#home" class="logo">
+              MIDORI<sup>®</sup>
+            </a>
+
+            <nav class="navigation">
+              <a href="./menu.html">Menu</a>
+              <a href="./story.html">Our story</a>
+              <a href="./visit.html">Visit Us</a>
+            </nav>
+
+            <a
+              href="./reserve.html"
+              class="reserve-button"
+            >
+              Reserve a table
+              <span>→</span>
+            </a>
+          </header>
+
+          <main class="hero">
+            <div class="hero-content">
+
+              <h1>
+                <span class="green-text">matcha.</span>
+                <br />
+                Made into
+                <br />
+                a moment.
+              </h1>
+
+              <p class="description">
+                Specialty matcha drinks, signature desserts,
+                and a calm café atmosphere inspired by
+                modern Asian aesthetics.
+              </p>
+
+              <div class="hero-buttons">
+                <a href="./menu.html" class="btn btn-dark">
+                  Explore Menu <span>→</span>
+                </a>
+
+                <a href="./visit.html" class="btn btn-light">
+                  Visit Us
+                </a>
+              </div>
+            </div>
+
+            <div class="hero-symbol" aria-hidden="true">
+              緑
+            </div>
+          </main>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script type="module" src="./matcha-3d.js"></script>
+</body>
+</html>
