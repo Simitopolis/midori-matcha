@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>MIDORI — Matcha</title>
-    <link rel="stylesheet" href="./style.css?v=5" />
+
+    <link rel="stylesheet" href="./style.css?v=10" />
+
     <noscript>
       <style>
         .home-page .matcha-green,
@@ -12,12 +15,15 @@
         .home-page .matcha-green .hero-content {
           opacity: 1 !important;
         }
+
         .home-page .matcha-green {
           pointer-events: auto !important;
         }
+
         .home-page .matcha-journey {
           height: 100vh !important;
         }
+
         .home-page .matcha-3d,
         .home-page .scroll-cue {
           display: none !important;
@@ -30,7 +36,7 @@
     <div class="page home-page" id="home">
       <section class="matcha-journey">
         <div class="matcha-journey__sticky">
-          <!-- 3D MATCHA CUP -->
+          <!-- 3D MATCHA INTRO -->
           <div class="matcha-3d" id="matcha-3d-canvas" aria-hidden="true">
             <img src="./pic/2.png" class="matcha-3d__fallback" alt="" />
           </div>
@@ -42,7 +48,7 @@
             aria-label="Scroll down to enter MIDORI"
           >
             <span>SCROLL TO ENTER</span>
-            <span class="scroll-cue__arrow">↓</span>
+            <span class="scroll-cue__arrow" aria-hidden="true">↓</span>
           </button>
 
           <!-- GREEN HOMEPAGE -->
@@ -50,6 +56,7 @@
             <header class="header">
               <a href="#home" class="logo"> MIDORI<sup>®</sup> </a>
 
+              <!-- MOBILE BURGER -->
               <button
                 class="menu-toggle"
                 type="button"
@@ -62,7 +69,11 @@
                 <span></span>
               </button>
 
-              <nav class="navigation" id="mobile-navigation">
+              <nav
+                class="navigation"
+                id="mobile-navigation"
+                aria-label="Main navigation"
+              >
                 <a href="./menu.html">Menu</a>
                 <a href="./story.html">Our story</a>
                 <a href="./visit.html">Visit Us</a>
@@ -70,18 +81,17 @@
 
               <a href="./reserve.html" class="reserve-button">
                 Reserve a table
-                <span>→</span>
+                <span aria-hidden="true">→</span>
               </a>
             </header>
 
+            <!-- HERO -->
             <main class="hero">
               <div class="hero-content">
                 <h1>
-                  <span class="green-text">matcha.</span>
-                  <br />
-                  Made into
-                  <br />
-                  a moment.
+                  <span class="hero-title-main"> matcha. </span>
+
+                  <span class="hero-title-sub"> Made into a moment. </span>
                 </h1>
 
                 <p class="description">
@@ -91,7 +101,8 @@
 
                 <div class="hero-buttons">
                   <a href="./menu.html" class="btn btn-dark">
-                    Explore Menu <span>→</span>
+                    Explore Menu
+                    <span aria-hidden="true">→</span>
                   </a>
 
                   <a href="./visit.html" class="btn btn-light"> Visit Us </a>
@@ -105,69 +116,62 @@
       </section>
     </div>
 
+    <!-- EXISTING 3D SCRIPT -->
     <script type="module" src="./matcha-3d.js"></script>
-    
-<script>
-  const menuToggle = document.querySelector(".menu-toggle");
-  const mobileNavigation = document.querySelector("#mobile-navigation");
 
-  if (menuToggle && mobileNavigation) {
+    <!-- MOBILE NAVIGATION -->
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
 
-    function setMenuOpen(isOpen) {
-      menuToggle.classList.toggle("is-open", isOpen);
-      mobileNavigation.classList.toggle("is-open", isOpen);
+      const mobileNavigation = document.querySelector("#mobile-navigation");
 
-      menuToggle.setAttribute(
-        "aria-expanded",
-        String(isOpen)
-      );
+      if (menuToggle && mobileNavigation) {
+        function setMenuOpen(isOpen) {
+          menuToggle.classList.toggle("is-open", isOpen);
 
-      menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Close menu" : "Open menu"
-      );
-    }
+          mobileNavigation.classList.toggle("is-open", isOpen);
 
-    menuToggle.addEventListener("click", () => {
-      const isOpen = menuToggle.getAttribute(
-        "aria-expanded"
-      ) === "true";
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
 
-      setMenuOpen(!isOpen);
-    });
+          menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close menu" : "Open menu",
+          );
+        }
 
-    // Close after selecting a page
-    mobileNavigation.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        setMenuOpen(false);
-      });
-    });
+        menuToggle.addEventListener("click", () => {
+          const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
 
-    // Close when pressing Escape
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape") {
-        setMenuOpen(false);
+          setMenuOpen(!isOpen);
+        });
+
+        mobileNavigation.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            setMenuOpen(false);
+          });
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            setMenuOpen(false);
+          }
+        });
+
+        document.addEventListener("click", (event) => {
+          if (
+            !menuToggle.contains(event.target) &&
+            !mobileNavigation.contains(event.target)
+          ) {
+            setMenuOpen(false);
+          }
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 768) {
+            setMenuOpen(false);
+          }
+        });
       }
-    });
-
-    // Close when clicking outside
-    document.addEventListener("click", event => {
-      if (
-        !menuToggle.contains(event.target) &&
-        !mobileNavigation.contains(event.target)
-      ) {
-        setMenuOpen(false);
-      }
-    });
-
-    // Reset when returning to desktop size
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        setMenuOpen(false);
-      }
-    });
-  }
-</script>
-
+    </script>
   </body>
 </html>
