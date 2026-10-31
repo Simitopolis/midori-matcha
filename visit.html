@@ -17,33 +17,56 @@
   <body>
     <div class="visit-page">
 
-      <!-- HEADER -->
       
+<!-- HEADER -->
 <header class="header">
 
   <a href="./index.html" class="logo">
     MIDORI<sup>®</sup>
   </a>
 
-  <nav class="navigation">
+  <!-- MOBILE BURGER -->
+  <button
+    class="menu-toggle"
+    type="button"
+    aria-label="Open menu"
+    aria-expanded="false"
+    aria-controls="visit-navigation"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- NAVIGATION -->
+  <nav
+    class="navigation"
+    id="visit-navigation"
+    aria-label="Main navigation"
+  >
     <a href="./index.html#menu">Menu</a>
     <a href="./index.html#story">Our story</a>
-    <a href="./visit.html" class="active">
-      Visit Us
+    <a href="./visit.html" class="active">Visit Us</a>
+
+    <!-- ONLY MOBILE -->
+    <a
+      href="./reserve.html"
+      class="mobile-reserve-link"
+    >
+      Reserve a table
+      <span>→</span>
     </a>
   </nav>
 
- 
-<a href="./reserve.html" class="reserve-button">
-  Reserve a table
-  <span>→</span>
-</a>
-
+  <!-- ONLY DESKTOP -->
+  <a href="./reserve.html" class="reserve-button">
+    Reserve a table
+    <span>→</span>
+  </a>
 
 </header>
 
-
-      </header>
+<!-- LOCATIONS -->
 
       <!-- LOCATIONS -->
       <main class="locations" id="locations">
@@ -76,7 +99,7 @@
               class="directions-link"
             >
               Get directions
-              <span>↗</span>
+            
             </a>
 
           </div>
@@ -110,7 +133,7 @@
               class="directions-link"
             >
               Get directions
-              <span>↗</span>
+              
             </a>
 
           </div>
@@ -144,7 +167,7 @@
               class="directions-link"
             >
               Get directions
-              <span>↗</span>
+              
             </a>
 
           </div>
@@ -178,7 +201,7 @@
               class="directions-link"
             >
               Get directions
-              <span>↗</span>
+             
             </a>
 
           </div>
@@ -198,5 +221,68 @@
       </footer>
 
     </div>
+    
+<script>
+  const visitToggle = document.querySelector(
+    ".visit-page .menu-toggle"
+  );
+
+  const visitNavigation = document.querySelector(
+    "#visit-navigation"
+  );
+
+  if (visitToggle && visitNavigation) {
+
+    function setVisitMenuOpen(open) {
+      visitToggle.classList.toggle("is-open", open);
+      visitNavigation.classList.toggle("is-open", open);
+
+      visitToggle.setAttribute(
+        "aria-expanded",
+        String(open)
+      );
+
+      visitToggle.setAttribute(
+        "aria-label",
+        open ? "Close menu" : "Open menu"
+      );
+    }
+
+    visitToggle.addEventListener("click", () => {
+      const isOpen =
+        visitToggle.getAttribute("aria-expanded") === "true";
+
+      setVisitMenuOpen(!isOpen);
+    });
+
+    visitNavigation.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        setVisitMenuOpen(false);
+      });
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        setVisitMenuOpen(false);
+      }
+    });
+
+    document.addEventListener("click", event => {
+      if (
+        !visitToggle.contains(event.target) &&
+        !visitNavigation.contains(event.target)
+      ) {
+        setVisitMenuOpen(false);
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        setVisitMenuOpen(false);
+      }
+    });
+  }
+</script>
+
   </body>
 </html>
