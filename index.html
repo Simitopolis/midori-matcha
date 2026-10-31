@@ -1,123 +1,173 @@
-
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MIDORI — Matcha</title>
-  <link rel="stylesheet" href="./style.css?v=5" />
-  <noscript>
-    <style>
-      .home-page .matcha-green,
-      .home-page .matcha-green .header,
-      .home-page .matcha-green .hero-content {
-        opacity: 1 !important;
-      }
-      .home-page .matcha-green {
-        pointer-events: auto !important;
-      }
-      .home-page .matcha-journey {
-        height: 100vh !important;
-      }
-      .home-page .matcha-3d,
-      .home-page .scroll-cue {
-        display: none !important;
-      }
-    </style>
-  </noscript>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIDORI — Matcha</title>
+    <link rel="stylesheet" href="./style.css?v=5" />
+    <noscript>
+      <style>
+        .home-page .matcha-green,
+        .home-page .matcha-green .header,
+        .home-page .matcha-green .hero-content {
+          opacity: 1 !important;
+        }
+        .home-page .matcha-green {
+          pointer-events: auto !important;
+        }
+        .home-page .matcha-journey {
+          height: 100vh !important;
+        }
+        .home-page .matcha-3d,
+        .home-page .scroll-cue {
+          display: none !important;
+        }
+      </style>
+    </noscript>
+  </head>
 
-<body>
-  <div class="page home-page" id="home">
+  <body>
+    <div class="page home-page" id="home">
+      <section class="matcha-journey">
+        <div class="matcha-journey__sticky">
+          <!-- 3D MATCHA CUP -->
+          <div class="matcha-3d" id="matcha-3d-canvas" aria-hidden="true">
+            <img src="./pic/2.png" class="matcha-3d__fallback" alt="" />
+          </div>
 
-    <section class="matcha-journey">
-      <div class="matcha-journey__sticky">
+          <!-- SCROLL HINT -->
+          <button
+            class="scroll-cue"
+            type="button"
+            aria-label="Scroll down to enter MIDORI"
+          >
+            <span>SCROLL TO ENTER</span>
+            <span class="scroll-cue__arrow">↓</span>
+          </button>
 
-        <!-- 3D MATCHA CUP -->
-        <div
-          class="matcha-3d"
-          id="matcha-3d-canvas"
-          aria-hidden="true"
-        >
-          <img
-            src="./pic/2.png"
-            class="matcha-3d__fallback"
-            alt=""
-          />
-        </div>
+          <!-- GREEN HOMEPAGE -->
+          <div class="matcha-green" id="main-menu">
+            <header class="header">
+              <a href="#home" class="logo"> MIDORI<sup>®</sup> </a>
 
-        <!-- SCROLL HINT -->
-        <button
-          class="scroll-cue"
-          type="button"
-          aria-label="Scroll down to enter MIDORI"
-        >
-          <span>SCROLL TO ENTER</span>
-          <span class="scroll-cue__arrow">↓</span>
-        </button>
+              <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobile-navigation"
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
 
-        <!-- GREEN HOMEPAGE -->
-        <div class="matcha-green" id="main-menu">
+              <nav class="navigation" id="mobile-navigation">
+                <a href="./menu.html">Menu</a>
+                <a href="./story.html">Our story</a>
+                <a href="./visit.html">Visit Us</a>
+              </nav>
 
-          <header class="header">
-            <a href="#home" class="logo">
-              MIDORI<sup>®</sup>
-            </a>
+              <a href="./reserve.html" class="reserve-button">
+                Reserve a table
+                <span>→</span>
+              </a>
+            </header>
 
-            <nav class="navigation">
-              <a href="./menu.html">Menu</a>
-              <a href="./story.html">Our story</a>
-              <a href="./visit.html">Visit Us</a>
-            </nav>
+            <main class="hero">
+              <div class="hero-content">
+                <h1>
+                  <span class="green-text">matcha.</span>
+                  <br />
+                  Made into
+                  <br />
+                  a moment.
+                </h1>
 
-            <a
-              href="./reserve.html"
-              class="reserve-button"
-            >
-              Reserve a table
-              <span>→</span>
-            </a>
-          </header>
+                <p class="description">
+                  Specialty matcha drinks, signature desserts, and a calm café
+                  atmosphere inspired by modern Asian aesthetics.
+                </p>
 
-          <main class="hero">
-            <div class="hero-content">
+                <div class="hero-buttons">
+                  <a href="./menu.html" class="btn btn-dark">
+                    Explore Menu <span>→</span>
+                  </a>
 
-              <h1>
-                <span class="green-text">matcha.</span>
-                <br />
-                Made into
-                <br />
-                a moment.
-              </h1>
-
-              <p class="description">
-                Specialty matcha drinks, signature desserts,
-                and a calm café atmosphere inspired by
-                modern Asian aesthetics.
-              </p>
-
-              <div class="hero-buttons">
-                <a href="./menu.html" class="btn btn-dark">
-                  Explore Menu <span>→</span>
-                </a>
-
-                <a href="./visit.html" class="btn btn-light">
-                  Visit Us
-                </a>
+                  <a href="./visit.html" class="btn btn-light"> Visit Us </a>
+                </div>
               </div>
-            </div>
 
-            <div class="hero-symbol" aria-hidden="true">
-              緑
-            </div>
-          </main>
-
+              <div class="hero-symbol" aria-hidden="true">緑</div>
+            </main>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
-  </div>
+    <script type="module" src="./matcha-3d.js"></script>
+    
+<script>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mobileNavigation = document.querySelector("#mobile-navigation");
 
-  <script type="module" src="./matcha-3d.js"></script>
-</body>
+  if (menuToggle && mobileNavigation) {
+
+    function setMenuOpen(isOpen) {
+      menuToggle.classList.toggle("is-open", isOpen);
+      mobileNavigation.classList.toggle("is-open", isOpen);
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close menu" : "Open menu"
+      );
+    }
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute(
+        "aria-expanded"
+      ) === "true";
+
+      setMenuOpen(!isOpen);
+    });
+
+    // Close after selecting a page
+    mobileNavigation.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        setMenuOpen(false);
+      });
+    });
+
+    // Close when pressing Escape
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", event => {
+      if (
+        !menuToggle.contains(event.target) &&
+        !mobileNavigation.contains(event.target)
+      ) {
+        setMenuOpen(false);
+      }
+    });
+
+    // Reset when returning to desktop size
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        setMenuOpen(false);
+      }
+    });
+  }
+</script>
+
+  </body>
 </html>
