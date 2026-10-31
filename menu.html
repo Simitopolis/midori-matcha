@@ -16,31 +16,59 @@
 <body>
   <div class="menu-page">
 
-    <!-- HEADER -->
-    <header class="header">
-      <a href="./index.html" class="logo">
-        MIDORI<sup>®</sup>
-      </a>
+    
+<!-- HEADER -->
+<header class="header">
 
-      <nav class="navigation" aria-label="Main navigation">
-        <a href="./menu.html" class="active" aria-current="page">
-          Menu
-        </a>
+  <a href="./index.html" class="logo">
+    MIDORI<sup>®</sup>
+  </a>
 
-        <a href="./story.html">
-          Our story
-        </a>
+  <!-- MOBILE BURGER -->
+  <button
+    class="menu-toggle"
+    type="button"
+    aria-label="Open menu"
+    aria-expanded="false"
+    aria-controls="menu-navigation"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-        <a href="./visit.html">
-          Visit Us
-        </a>
-      </nav>
+  <!-- NAVIGATION -->
+  <nav
+    class="navigation"
+    id="menu-navigation"
+    aria-label="Main navigation"
+  >
+    <a href="./menu.html" class="active" aria-current="page">
+      Menu
+    </a>
 
-      <a href="./visit.html" class="reserve-button">
-        Find your nearest café
-        <span>→</span>
-      </a>
-    </header>
+    <a href="./story.html">Our story</a>
+
+    <a href="./visit.html">Visit Us</a>
+
+    <!-- MOBILE ONLY -->
+    <a
+      href="./reserve.html"
+      class="mobile-reserve-link"
+    >
+      Reserve a table
+      <span>→</span>
+    </a>
+  </nav>
+
+  <!-- DESKTOP BUTTON: KEEP ORIGINAL -->
+  <a href="./visit.html" class="reserve-button">
+    Find your nearest café
+    <span>→</span>
+  </a>
+
+</header>
+
 
     <main class="menu-main">
 
@@ -403,6 +431,6 @@
 
     filterDrinks();
   </script>
-
+<script src="./mobile-nav.js" defer></script>
 </body>
 </html>

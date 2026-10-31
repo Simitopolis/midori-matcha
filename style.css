@@ -2901,3 +2901,380 @@ a {
 
 }
 
+/* ==========================
+   STORY + MENU MOBILE BURGER
+========================== */
+
+/* Hidden on desktop */
+
+.story-page .menu-toggle,
+.menu-page .menu-toggle,
+.story-page .mobile-reserve-link,
+.menu-page .mobile-reserve-link {
+  display: none;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  /* HEADER */
+
+  .story-page .header,
+  .menu-page .header {
+    position: relative;
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 70px;
+    min-height: 70px;
+    padding: 0;
+  }
+
+  /* HIDE DESKTOP BUTTON */
+
+  .story-page .reserve-button,
+  .menu-page .reserve-button {
+    display: none;
+  }
+
+  /* BURGER */
+
+  .story-page .menu-toggle,
+  .menu-page .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 42px;
+    height: 42px;
+    gap: 5px;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    z-index: 11;
+  }
+
+  .story-page .menu-toggle span,
+  .menu-page .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #222320;
+
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  /* BURGER → X */
+
+  .story-page .menu-toggle.is-open span:nth-child(1),
+  .menu-page .menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .story-page .menu-toggle.is-open span:nth-child(2),
+  .menu-page .menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .story-page .menu-toggle.is-open span:nth-child(3),
+  .menu-page .menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* DROPDOWN */
+
+  .story-page .navigation,
+  .menu-page .navigation {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    transform: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    width: 100%;
+    gap: 0;
+    padding: 12px 18px 20px;
+
+    background: #ffffff;
+    border: 1px solid #eeeeec;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    z-index: 10;
+
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  /* OPEN DROPDOWN */
+
+  .story-page .navigation.is-open,
+  .menu-page .navigation.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* NAVIGATION LINKS */
+
+  .story-page .navigation a,
+  .menu-page .navigation a {
+    display: block;
+    width: 100%;
+
+    padding: 15px 0;
+
+    font-size: 15px;
+    font-weight: 500;
+    color: #222320;
+
+    border-bottom: 1px solid #eeeeec;
+  }
+
+  .story-page .navigation a.active,
+  .menu-page .navigation a.active {
+    color: #4b970b;
+  }
+
+  .story-page .navigation a:hover,
+  .menu-page .navigation a:hover {
+    color: #4b970b;
+    transform: none;
+  }
+
+  /* RESERVATION INSIDE BURGER */
+
+  .story-page .navigation .mobile-reserve-link,
+  .menu-page .navigation .mobile-reserve-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    min-height: 48px;
+
+    margin-top: 15px;
+    padding: 0 16px;
+
+    background: #111111;
+    color: #ffffff;
+    border: none;
+
+    font-size: 13px;
+  }
+
+  .story-page .navigation .mobile-reserve-link:hover,
+  .menu-page .navigation .mobile-reserve-link:hover {
+    background: #4b970b;
+    color: #ffffff;
+  }
+
+  .story-page .mobile-reserve-link span,
+  .menu-page .mobile-reserve-link span {
+    font-size: 21px;
+  }
+}
+
+/* ==========================
+   PRODUCT MOBILE BURGER
+========================== */
+
+/* Hidden on desktop */
+
+.product-page .menu-toggle,
+.product-page .mobile-reserve-link {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  /* HEADER */
+
+  .product-page .header {
+    position: relative;
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 70px;
+    min-height: 70px;
+    padding: 0;
+  }
+
+  /* HIDE DESKTOP BUTTON */
+
+  .product-page .reserve-button {
+    display: none;
+  }
+
+  /* BURGER BUTTON */
+
+  .product-page .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+    gap: 5px;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+    z-index: 11;
+  }
+
+  .product-page .menu-toggle span {
+    display: block;
+
+    width: 25px;
+    height: 2px;
+
+    background: #222320;
+
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  /* BURGER → X */
+
+  .product-page .menu-toggle.is-open
+  span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .product-page .menu-toggle.is-open
+  span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .product-page .menu-toggle.is-open
+  span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* DROPDOWN NAVIGATION */
+
+  .product-page .navigation {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    transform: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    width: 100%;
+    gap: 0;
+
+    padding: 12px 18px 20px;
+
+    background: #ffffff;
+    border: 1px solid #eeeeec;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    z-index: 10;
+
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  /* OPEN MENU */
+
+  .product-page .navigation.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* NAVIGATION LINKS */
+
+  .product-page .navigation a {
+    display: block;
+    width: 100%;
+
+    padding: 15px 0;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    color: #222320;
+
+    border-bottom: 1px solid #eeeeec;
+  }
+
+  .product-page .navigation a.active {
+    color: #4b970b;
+  }
+
+  .product-page .navigation a:hover {
+    color: #4b970b;
+    transform: none;
+  }
+
+  /* RESERVATION BUTTON INSIDE BURGER */
+
+  .product-page .navigation .mobile-reserve-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    min-height: 48px;
+
+    margin-top: 15px;
+    padding: 0 16px;
+
+    background: #111111;
+    color: #ffffff;
+
+    border: none;
+    font-size: 13px;
+  }
+
+  .product-page .navigation
+  .mobile-reserve-link:hover {
+    background: #4b970b;
+    color: #ffffff;
+  }
+
+  .product-page .mobile-reserve-link span {
+    font-size: 21px;
+  }
+}
+
