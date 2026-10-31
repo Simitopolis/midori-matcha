@@ -3278,3 +3278,65 @@ a {
   }
 }
 
+/* ==========================
+   OUR STORY — READ MORE LINKS
+========================== */
+
+.story-page .story-read-more {
+  display: inline-block;
+  width: fit-content;
+  gap: 0;
+  padding-bottom: 5px;
+
+  border-bottom: 1px solid currentColor;
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+/* Hide emoji arrows */
+
+.story-page .story-read-more span {
+  display: none;
+}
+
+.story-page .story-read-more:hover {
+  color: #2e6705;
+}
+
+
+/* ==========================
+   OUR STORY — MOBILE IMAGE FIRST
+========================== */
+
+@media (max-width: 650px) {
+
+  .story-page .story-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Matcha powder image first */
+
+  .story-page .story-intro-image {
+    order: -1;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  .story-page .story-intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Text below image */
+
+  .story-page .story-intro .story-text {
+    order: 1;
+    padding-top: 0;
+  }
+}
+
